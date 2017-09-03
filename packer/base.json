@@ -1,0 +1,23 @@
+{
+  "variables": {
+    "do_token": "{{env `TF_VAR_do_token`}}"
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "ssh_username": "root",
+      "api_token": "{{ user `do_token` }}",
+      "image": "node-16-04",
+      "region": "FRA1",
+      "size": "512mb",
+      "snapshot_name": "pixelcanvas-base-{{timestamp}}"
+    }],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/install.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}

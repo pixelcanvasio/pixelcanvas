@@ -1,0 +1,25 @@
+#cloud-config
+users:
+  - name: pixel
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ${userdata_public_key}
+
+disable_root: true
+
+apt_update: true
+package_update: true
+
+write_files:
+ - encoding: b64
+   content: ${userdata_pm2_conf}
+   path: /tmp/processes.yml
+
+# https://github.com/GetStream/stream-react-example/blob/master/terraform/do/cabin/templates/web.tpl
+runcmd:
+  - mv /tmp/processes.yml /home/pixel/processes.yml
+  - chown pixel.pixel /home/pixel/processes.yml
+  - cd /home/pixel && sudo -u pixel pm2 start processes.yml
+  - sudo env PATH=$PATH:/usr/local/bin pm2 startup -u pixel --hp /home/pixel
+  - sudo ufw allow 8080/tcp
+  - curl -sSL https://agent.digitalocean.com/install.sh | sh

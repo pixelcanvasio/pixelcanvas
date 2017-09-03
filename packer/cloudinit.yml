@@ -1,0 +1,16 @@
+#cloud-config
+
+apt_update: true
+package_update: true
+packages:
+ - iptables-persistent
+ - git
+ - ntp
+ - build-essential
+ - nginx
+ - yarn
+
+
+# https://github.com/GetStream/stream-react-example/blob/master/terraform/do/cabin/templates/web.tpl
+runcmd:
+  - cd /home/pixel && sudo -u pixel pm2 start processes.yml

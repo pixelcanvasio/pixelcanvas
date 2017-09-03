@@ -1,0 +1,46 @@
+{
+  "variables": {
+    "do_token": "{{env `TF_VAR_do_token`}}",
+    "region": "{{env `TF_VAR_region`}}"
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "ssh_username": "root",
+      "api_token": "{{ user `do_token` }}",
+      "image": "26648914",
+      "region": "{{ user `region` }}",
+      "size": "512mb",
+      "snapshot_name": "pixelcanvas-{{timestamp}}"
+    }],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "configs/",
+      "destination": "/tmp"
+    },
+    {
+      "scripts": [
+        "scripts/nginx.sh",
+        "scripts/pixel.sh",
+        "scripts/pm2.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "type": "shell-local",
+      "command": "cd ..; yarn run build -- --release"
+    },
+    {
+      "type": "file",
+      "source": "../build/",
+      "destination": "/home/pixel/www"
+    },
+    {
+      "scripts": [
+        "scripts/post-receive.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}

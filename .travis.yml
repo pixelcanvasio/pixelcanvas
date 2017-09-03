@@ -1,0 +1,19 @@
+language: node_js
+# https://blog.travis-ci.com/2016-11-21-travis-ci-now-supports-yarn
+cache:
+  yarn: true
+  directories:
+    - node_modules
+node_js:
+  - '7'
+  - '6'
+  - '6.10.0'
+script:
+  - yarn lint
+  - yarn test
+# https://docs.travis-ci.com/user/deployment/script/
+deploy:
+  provider: script
+  script: yarn run deploy
+  on:
+    branch: master

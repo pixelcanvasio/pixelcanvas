@@ -1,0 +1,9 @@
+{
+    "terminal.integrated.shellArgs.osx": ["-l"],
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Source Code Pro",
+    "terminal.integrated.fontFamily": "Source Code Pro",
+    "terminal.integrated.fontSize": 14,
+    "javascript.validate.enable": false,
+    "flow.useNPMPackagedFlow": true
+}

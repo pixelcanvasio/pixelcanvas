@@ -1,0 +1,21 @@
+apps:
+  - script   : ./build/web.js
+    name     : 'web'
+#    instances: 4
+#    exec_mode: cluster
+    watch    : "build"
+    node_args: --nouse-idle-notification --expose-gc
+    env:
+      CANVAS_WIDTH:  10000
+      CANVAS_HEIGHT: 10000
+      CANVAS_MIN_X: -5000
+      CANVAS_MIN_Y: -5000
+  - script : ./build/websockets.js
+    name   : 'websockets'
+    watch  : "build"
+    node_args: --nouse-idle-notification --expose-gc
+    env:
+      CANVAS_WIDTH:  10000
+      CANVAS_HEIGHT: 10000
+      CANVAS_MIN_X: -5000
+      CANVAS_MIN_Y: -5000
