@@ -39,13 +39,3 @@ resource "digitalocean_floating_ip" "web_staging" {
   droplet_id = "${digitalocean_droplet.web_blue.0.id}"
   region     = "${var.region}"
 }
-
-resource "digitalocean_floating_ip" "ws0" {
-  droplet_id = "${digitalocean_droplet.websockets_green.0.id}"
-  region     = "${var.region}"
-}
-
-resource "digitalocean_floating_ip" "ws1" {
-  droplet_id = "${digitalocean_droplet.websockets_green.1.id}"
-  region     = "${var.region}"
-}
