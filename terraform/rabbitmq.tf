@@ -6,10 +6,12 @@ resource "digitalocean_droplet" "rabbitmq" {
   image  = "debian-8-x64"
   name   = "pixelcanvas-rabbitmq"
   region = "${var.region}"
-  size   = "1gb"
+  size   = "512mb"
 
-  ipv6               = true
+  ipv6               = false
   private_networking = true
+
+  count = 1
 
   ssh_keys = [
     "${digitalocean_ssh_key.ssh_key.fingerprint}",
