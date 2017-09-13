@@ -2,6 +2,7 @@ build
 chunks
 players.json
 .digitalocean
+database.sqlite
 
 
 # Created by https://www.gitignore.io/api/node,webstorm

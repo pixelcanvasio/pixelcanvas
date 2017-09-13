@@ -9,7 +9,7 @@ export const WS_PORT = (__DEV__) ? 3001 : 8080;
 // they should be public address
 export const WS_HOSTNAMES = process.env.WS_HOSTNAMES
   ? JSON.parse(process.env.WS_HOSTNAMES)
-  : ['192.168.1.128'];
+  : ['192.168.1.131'];
 export const WS_HOSTS = WS_HOSTNAMES.map(hostname => `${hostname}:${WS_PORT}`);
 
 
@@ -45,7 +45,7 @@ export const amqp = {
 };
 
 // Database
-export const databaseUrl = process.env.DATABASE_URL;
+export const databaseUrl = process.env.DATABASE_URL || 'sqlite:database.sqlite';
 
 export const analytics = {
 

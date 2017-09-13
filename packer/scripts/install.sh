@@ -18,9 +18,3 @@ apt-get -yq install python2.7
 add-apt-repository ppa:nginx/stable
 apt-get update
 apt-get -yq install nginx
-
-# install yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-apt-get update
-apt-get -yq install yarn

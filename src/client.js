@@ -8,6 +8,7 @@ import keycode from 'keycode';
 import Hammer from 'hammerjs';
 import Visibility from 'visibilityjs';
 import Raven from 'raven-js';
+import 'cookieconsent';
 
 import {
   getChunkOfPixel,
@@ -367,5 +368,21 @@ document.addEventListener('DOMContentLoaded', () => {
   updateOnline();
   Visibility.every((10 + 2) * 1000, () => {
     updateOnline();
+  });
+
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {
+        background: "#000",
+      },
+      button: {
+        background: "#f1d600",
+      },
+    },
+    position: 'top',
+    content: {
+      message: "This website uses google, which in turn uses cookies to deliver ads and track usage information. If you use the website you agree that we use cookies. This message is to inform you about EU law since september 2015",
+      href: "https://www.google.com/policies/technologies/cookies/"
+    },
   });
 });

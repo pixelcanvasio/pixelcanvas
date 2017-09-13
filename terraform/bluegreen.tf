@@ -1,18 +1,21 @@
 
-# green now is PRODUCTION
 data "digitalocean_image" "pixelcanvas_green_web" {
-  name = "pixelcanvas-1501248731"
+  # PRODUCTION
+  name = "pixelcanvas-1505293763"
 }
 data "digitalocean_image" "pixelcanvas_green_ws" {
+  # PRODUCTION
   name = "pixelcanvas-1501248731"
 }
 
-# blue now is STAGING
+
 data "digitalocean_image" "pixelcanvas_blue" {
+  # STAGING
   name = "pixelcanvas-1501253443"
 }
 data "digitalocean_image" "pixelcanvas_blue_ws" {
-  name = "pixelcanvas-1501253443"
+  # STAGING
+  name = "pixelcanvas-1505160928"
 }
 
 resource "digitalocean_loadbalancer" "public" {
@@ -32,7 +35,7 @@ resource "digitalocean_loadbalancer" "public" {
     path = "/api/bigchunk/0.0.bmp"
   }
 
-  droplet_ids = ["${digitalocean_droplet.web_blue.*.id}"]
+  droplet_ids = ["${digitalocean_droplet.web_green.*.id}"]
 }
 
 resource "digitalocean_floating_ip" "web_staging" {

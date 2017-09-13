@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@newrelic/native-metrics@^2.1.0", "@newrelic/native-metrics@^2.1.1":
+"@newrelic/native-metrics@^2.1.0":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@newrelic/native-metrics/-/native-metrics-2.1.1.tgz#2a7abd87373e46b3c957a08124a72c0c41968dc8"
   dependencies:
@@ -1696,6 +1696,10 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+cookieconsent@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/cookieconsent/-/cookieconsent-3.0.4.tgz#ef02b3fdbd10de6a9af20f22e287448bfdd48c5d"
 
 cookiejar@2.0.6:
   version "2.0.6"
