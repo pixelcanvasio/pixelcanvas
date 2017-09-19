@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     position: 'top',
     content: {
-      message: "This website uses google, which in turn uses cookies to deliver ads and track usage information. If you use the website you agree that we use cookies. This message is to inform you about EU law since september 2015",
+      message: "We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information you’ve provided to them or they’ve collected from your use of their services.",
       href: "https://www.google.com/policies/technologies/cookies/"
     },
   });

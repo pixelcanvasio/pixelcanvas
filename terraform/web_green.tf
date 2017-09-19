@@ -41,5 +41,5 @@ resource "digitalocean_droplet" "web_green" {
   user_data = "${data.template_file.userdata_web_green.rendered}"
 
   # This will create 4 instances
-  count = 2
+  count = 0
 }
