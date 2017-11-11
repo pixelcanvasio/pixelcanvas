@@ -1,4 +1,6 @@
 # PixelCanvas.io
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pixelcanvasio/pixelcanvas.svg)](https://greenkeeper.io/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpixelcanvasio%2Fpixelcanvas.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpixelcanvasio%2Fpixelcanvas?ref=badge_shield)
 
 
