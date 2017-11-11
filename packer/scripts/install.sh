@@ -8,6 +8,14 @@ sleep 30
 
 apt-get update
 apt-get -y dist-upgrade
+apt-get -yq install curl
+
+# nodejs
+curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+bash nodesource_setup.sh
+apt-get -yq install nodejs
+
+# other tools
 apt-get -yq install git
 apt-get -yq install ntp
 apt-get -yq install build-essential

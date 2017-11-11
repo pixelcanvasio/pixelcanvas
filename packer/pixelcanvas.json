@@ -8,7 +8,7 @@
       "type": "digitalocean",
       "ssh_username": "root",
       "api_token": "{{ user `do_token` }}",
-      "image": "27735436",
+      "image": "29261527",
       "region": "{{ user `region` }}",
       "size": "512mb",
       "snapshot_name": "pixelcanvas-{{timestamp}}"
@@ -29,7 +29,7 @@
     },
     {
       "type": "shell-local",
-      "command": "cd ..; yarn run build -- --release"
+      "command": "cd ..; npm run build -- --release"
     },
     {
       "type": "file",

@@ -7,7 +7,7 @@
       "type": "digitalocean",
       "ssh_username": "root",
       "api_token": "{{ user `do_token` }}",
-      "image": "node-16-04",
+      "image": "debian-9-x64",
       "region": "FRA1",
       "size": "512mb",
       "snapshot_name": "pixelcanvas-base-{{timestamp}}"

@@ -8,7 +8,7 @@ packages:
  - ntp
  - build-essential
  - nginx
- - yarn
+ - nodejs
 
 
 # https://github.com/GetStream/stream-react-example/blob/master/terraform/do/cabin/templates/web.tpl
