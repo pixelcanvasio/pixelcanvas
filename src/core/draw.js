@@ -39,7 +39,11 @@ async function draw(
   const [pixel, isCreated] = await Pixel.findOrCreate({
     where: { x, y },
   });
-  const coolDown = await user.getCoolDown(pixel, isCreated); // in milliseconds
+  const oldCooldown = await user.getCoolDown(pixel, isCreated); // in milliseconds
+  const distance = Math.sqrt((x ** 2) + (y ** 2));
+  const maxSeconds = 30.0 * (1.0 + (distance / 500.0));
+  const maxCooldown = maxSeconds * 1000.0 | 0;
+  const coolDown = Math.min(oldCooldown, maxCooldown);
   await pixel.update({ user, color, ip, fingerprint });
   broadcast(PixelUpdate.dehydrate({ x, y, color }));
   // this.emit('place', { x, y, color });

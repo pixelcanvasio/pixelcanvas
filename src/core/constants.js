@@ -22,7 +22,7 @@ export const social = {
 
 };
 
-export const release = '2017.09.19';
+export const release = '2017.09.22';
 
 export const COOKIE_SESSION_NAME = 'pixelcanvas.session';
 
