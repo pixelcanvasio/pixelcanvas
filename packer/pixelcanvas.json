@@ -8,7 +8,7 @@
       "type": "digitalocean",
       "ssh_username": "root",
       "api_token": "{{ user `do_token` }}",
-      "image": "29261527",
+      "image": "29261640",
       "region": "{{ user `region` }}",
       "size": "512mb",
       "snapshot_name": "pixelcanvas-{{timestamp}}"

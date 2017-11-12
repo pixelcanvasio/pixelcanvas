@@ -41,7 +41,7 @@ resource "digitalocean_droplet" "websockets_green" {
   user_data = "${data.template_file.userdata_websockets_green.rendered}"
 
   # This will create 1 instances
-  count = 2
+  count = 0
 
   provisioner "local-exec" {
     command = "sleep 30"

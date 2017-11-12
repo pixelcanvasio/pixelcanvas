@@ -19,6 +19,7 @@ const CAPTCHA_PROB = 0.05;
 const DATE_FIRST_PIXEL = new Date(2017, 7, 12);
 
 const ADMINS = new Set([
+  // TODO fetch from environment
   'facebook:your id on fb',
   'facebook:another id on fb',
   'ip:your static ip???',

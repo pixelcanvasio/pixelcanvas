@@ -1,20 +1,20 @@
 
 data "digitalocean_image" "pixelcanvas_green_web" {
-  # PRODUCTION
-  name = "pixelcanvas-1506104830"
+  # STAGING
+  name = "pixelcanvas-1510398298"
 }
 data "digitalocean_image" "pixelcanvas_green_ws" {
-  # PRODUCTION
+  # STAGING
   name = "pixelcanvas-1501248731"
 }
 
 
 data "digitalocean_image" "pixelcanvas_blue" {
-  # STAGING
-  name = "pixelcanvas-1510393407"
+  # PRODUCTION
+  name = "pixelcanvas-1510480311"
 }
 data "digitalocean_image" "pixelcanvas_blue_ws" {
-  # STAGING
+  # PRODUCTION
   name = "pixelcanvas-1510393407"
 }
 
