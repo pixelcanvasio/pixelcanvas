@@ -33,31 +33,27 @@ export default async (req: Request, res: Response) => {
   user.ip = ip;
   user.fingerprint = 'BANBANBANBANBANBANBANBANBANBANv0';
 
-  await Blacklist
-    .findOrCreate({
-      where: { numIp },
-    });
+  await Blacklist.findOrCreate({
+    where: { numIp },
+  });
 
-  const dbPixels = await Pixel
-    .findAll({
-      where: {
-        numIp,
-      },
-    });
+  const dbPixels = await Pixel.findAll({
+    where: {
+      numIp,
+    },
+  });
 
   const pixels = dbPixels.map((pixel) => {
     const { x, y, color, fingerprint } = pixel;
     return { x, y, color, fingerprint };
   });
 
-  await Promise.all(pixels.map(async (pixel) => {
-    const { x, y, fingerprint, color } = pixel;
-
-    if (fingerprint.startsWith('BANBANBAN') && color === 0) return false;
-
-    const success = await drawUnsafe(user, x, y, 0);
-    return success;
-  }));
+  await Promise.all(
+    pixels
+    .filter(({ fingerprint, color }) =>
+      !(fingerprint.startsWith('BANBANBAN') && color === 0))
+    .map(({ x, y }) => drawUnsafe(user, x, y, 0))
+  );
 
   const count = pixels.length;
   res.json({ numIp, pixels, count });
